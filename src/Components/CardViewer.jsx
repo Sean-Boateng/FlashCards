@@ -2,17 +2,41 @@ import { useState } from "react";
 
 const CardViewer = (props) => {
     const[index,setIndex]=useState(0)
+    const updateIndex=()=>{
+        setIndex(index+1)
+        setState(!state)
+        console.log(index)
+    }
+    const[state,setState]=useState(false);
+    const toggle=()=>{
+        setState(!state)
+    }
+
+
     return ( 
         <div>
-            {/* <button onClick={setIndex(index+1)}>Next</button> */}
+            
+            
+                <div onClick={toggle}>
+                    {state ? props.cardv[index]?.definition:props.cardv[index]?.word}                                                          
+                </div>
+            <button onClick={updateIndex}>Next</button>
+
+           {/* {props.cardv.map((el)=>{           
+           })}
             <div>  
-                {props.cardv[index]?.word}
+            {props.cardv[index]?.word}
+                 */}
                 
-                                
-                 
-                
-             </div>
+                {/* <div>
+
+                </div> */}
+    
+             {/* </div> */}
      </div>);
 }
+
+
+
  
 export default CardViewer;
