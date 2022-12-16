@@ -2,8 +2,13 @@ import { useState } from "react";
 
 const CardViewer = (props) => {
     const[index,setIndex]=useState(0)
-    const updateIndex=()=>{
+    const addIndex=()=>{
         setIndex(index+1)
+        setState(!state)
+        console.log(index)
+    }
+    const subIndex=()=>{
+        setIndex(index-1)
         setState(!state)
         console.log(index)
     }
@@ -20,7 +25,7 @@ const CardViewer = (props) => {
                 <div onClick={toggle}>
                     {state ? props.cardv[index]?.definition:props.cardv[index]?.word}                                                          
                 </div>
-            <button onClick={updateIndex}>Next</button>
+            <button onClick={addIndex}>Next</button> <button onClick={subIndex}>Previous</button>
 
            {/* {props.cardv.map((el)=>{           
            })}
