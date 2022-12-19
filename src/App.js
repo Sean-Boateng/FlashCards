@@ -6,14 +6,17 @@ import CardViewer from './Components/CardViewer'
 import Card from "./Components/Card";
 
 
+
 function App() {
   const[collection, setCollection]= useState([])
-  const[collectionBy, setCollectionBy]= useState(['areb'])
+  const[collectionBy, setCollectionBy]= useState([])
   const[saveid,setsaveId] = useState([])
   const[displayform,setDisplayForm]= useState([])
 
   useEffect(()=>{
     getAllCollections();
+    collectionItems(1);
+    
     
     
   },[])
@@ -36,6 +39,11 @@ function App() {
     setCollectionBy(response.data)
   }
 
+  async function deleteCard(id){
+    let response = axios.delete(`http://127.0.0.1:8000/api/collections/${saveid}/cards/${id}/`)
+    .then(() => this.setCollectionBy({ status: 'Delete successful' }))
+  }
+
   return (
     <div>
       <Header/>
@@ -46,7 +54,7 @@ function App() {
 
       <div>
         <button onClick={()=>setDisplayForm(!displayform)}>Add New Card</button>
-        {displayform ? <CardViewer cardv ={collectionBy}/>: <Card AddNewCard={addNewCard}/>}
+        {displayform ? <CardViewer cardv ={collectionBy} deleteCard={deleteCard}/>: <Card AddNewCard={addNewCard}/>}
         </div>
         
     </div>

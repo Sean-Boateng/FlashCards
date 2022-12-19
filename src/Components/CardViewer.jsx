@@ -1,5 +1,7 @@
-import Card from "./Card";
+
 import { useState } from "react";
+import deleteCard from "../App";
+
 
 const CardViewer = (props) => {
     const[index,setIndex]=useState(0)
@@ -18,13 +20,18 @@ const CardViewer = (props) => {
         setState(!state)
     }
 
+    
+
 
     return ( 
         <div>
+            
             <div onClick={toggle}>
                 {state ? props.cardv[index]?.definition:props.cardv[index]?.word}                                                                         
             
-            <button onClick={addIndex}>Next</button> <button onClick={subIndex}>Previous</button>
+            <button onClick={addIndex}>Next</button> <button onClick={subIndex}>Previous</button> 
+
+            <button onClick={()=>props.deleteCard(props.cardv[index].id)}>Delete</button>
             </div>
             
 

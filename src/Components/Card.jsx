@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 
+
 const Card = (props)=>{
     const[word,setWord]= useState('')
     const[definition,setDefinition]= useState('')
 
 
-    const[state,setState]=useState(false);
-    const toggle=()=>{
-        setState(!state)
-    }
+    
 
     function handleSubmit(card){
         card.preventDefault();
@@ -19,6 +17,8 @@ const Card = (props)=>{
         debugger
         console.log(newEntry)
         props.AddNewCard(newEntry)
+
+    
     }
     return(
         <form onSubmit={handleSubmit}>
