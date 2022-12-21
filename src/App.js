@@ -4,6 +4,8 @@ import Sidebar from "./Components/Sidebar";
 import Header from './Components/Header';
 import CardViewer from './Components/CardViewer'
 import Card from "./Components/Card";
+import './Components/App.css'
+
 
 
 
@@ -47,16 +49,26 @@ function App() {
   return (
     <div>
       <Header/>
-      <Sidebar collection = {collection}collectionItems={collectionItems}/>
+      <div className="" class='container'>
+        <div class='row' style={{paddingTop:'100px', display:'flex', justifyContent:'center'}}>
+          <div class='col-md-4' >
+            <div className="sidebar" >
+              <Sidebar collection = {collection}collectionItems={collectionItems}/>
+            </div>
+          </div>
       
 
       
 
-      <div>
-        <button onClick={()=>setDisplayForm(!displayform)}>Add New Card</button>
-        {displayform ? <CardViewer cardv ={collectionBy} deleteCard={deleteCard}/>: <Card AddNewCard={addNewCard}/>}
-        </div>
-        
+          <div class='col-md-5'>
+            <div className="mainbox">
+              {displayform ? <CardViewer cardv ={collectionBy} deleteCard={deleteCard}/>: <Card AddNewCard={addNewCard}/>}<br/>
+              <button onClick={()=>setDisplayForm(!displayform)}>Add New Card</button>
+              
+            </div>
+          </div>
+        </div>  
+      </div>
     </div>
   );
 }

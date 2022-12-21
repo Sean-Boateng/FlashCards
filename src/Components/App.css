@@ -1,0 +1,40 @@
+*{
+    background-color: #4a4e69;
+}
+
+.head{
+    display: flex;
+    
+    justify-content: center;
+    font-style: oblique;
+    font-size: 50px;
+}
+
+.exam{
+    color:#f2e9e4;
+}
+
+.prep{
+    color:#22223b;
+}
+
+.sidebar{
+    padding: 15px;
+    border:1px;
+    border-style: solid;
+    border-color:#4a4e69 ;
+    color: white;
+    font-size: large;
+
+}
+
+.mainbox{
+    padding: 15px;
+    border:1px;
+    border-style: solid;
+    border-color:white;
+    color: #4a4e69 ;
+    font-size: large;
+    background-color: white;
+}
+

@@ -24,10 +24,10 @@ const CardViewer = (props) => {
 
 
     return ( 
-        <div>
-            
-            <div onClick={toggle}>
-                {state ? props.cardv[index]?.definition:props.cardv[index]?.word}                                                                         
+        <div style={{backgroundColor:'white'}}>
+            {index+1}/{props.cardv.length}
+            <div style={{backgroundColor:'white'}} onClick={toggle}>
+                {state ? props.cardv[index]?.definition:props.cardv[index]?.word}<br/>                                                                         
             
             <button onClick={addIndex}>Next</button> <button onClick={subIndex}>Previous</button> 
 

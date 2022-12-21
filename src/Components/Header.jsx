@@ -1,8 +1,12 @@
-
+import './App.css'
 
 const Header = (props) => {
     return ( 
-        <header>Exam Prep</header>
+        <header className="head">
+            
+            <big className='exam'>Exam</big><big className='prep'>Prep</big>
+            
+            </header>
      );
 }
  
